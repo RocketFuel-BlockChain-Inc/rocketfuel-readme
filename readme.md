@@ -101,15 +101,15 @@ where
   "merchant_id": "b49e76e5-34a4-474e-9ab5-dad303f98891",
   "order": "13" - order }
 
-- SIGNATURE - base64 string from payload. for example:
+- SIGNATURE - base64 string from payload, for example:
 
   vh+irAjWa/2HkYalb2IpdKNyrGAJ+4reQVfRa8I4VyM3xhZ6+W4Cv7iixW2GAzyj59RQhroWBLfiS+HM2BpGl9PFlExiZCswTSvela8Rk0F2ghLJHW+hPCeWlIxDkXxA4ldBYHZsP7BzGrvdUubNjm83cmlj2ccD22mpsrMLS+yswCZAdDuvGC7eHuzNlwwt8JbTjx5Jymo3B3bbVKJoWYIZdP9AkLLaF7z7pq4L0PWwKrgJEpRcy5kHiJPsDJg8UKecth4I0ZhxHviC4a2/6zwuZOhbTGKCnojr3WVk+s1rt0F0ZBYlQEbssjCGRwqT+7ZWRCJX7FIemNIg8gxOmA==
 
-callback just check signature, and return result json, looks like:
+callback just checks a payload signature and returns result as a json file:
 
     [ 'success' => true, 'message' => 'signature valid' ] 
 
-or if error
+or (if error)
 
     ['error' => true,'message' => 'signature not valid']
 
