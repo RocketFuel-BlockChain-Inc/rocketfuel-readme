@@ -7,11 +7,24 @@
 
 # Send payment to extension or iframe
 
-After you create new order in your shop, you should send it to rocketfuel,
+After you store new order in your shop database, 
+for processing payment you should send payload to rocketfuel,
 
 ## make payload(cart) in needed format
 
 Use [rocketfuel-php-sdk](https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk/)
+
+## install php sdk via composer
+
+    composer require rocketfuel/rocketfuel-php-sdk @dev
+
+## or git
+
+    git clone https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk.git
+
+    cd rocketfuel-php-sdk
+
+    composer install
 
 make controller method looks like
 
@@ -42,9 +55,9 @@ where
         ]
     ]
 
-for example possible get order payload(card) via ajax or something looks like this, 
+for example possible get order payload(card) via ajax from shop backend, 
 next need use [rocketfuel-js-helper](https://bitbucket.org/rocketfuelblockchain/rocketfuel-js-helper/src/master/) 
-on frontend and send cart to iframe or extension
+on frontend and send payload(cart) to iframe or extension
 
 # Using js helper
 
@@ -74,21 +87,7 @@ using [rocketfuel-php-sdk](https://bitbucket.org/rocketfuelblockchain/rocketfuel
 
 # Using php sdk
 
-# install php sdk
-
-## via composer
-
-    composer require rocketfuel/rocketfuel-php-sdk @dev
-
-## or git
-
-    git clone https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk.git
-
-    cd rocketfuel-php-sdk
-
-    composer install
-
-Usage php-sdk example/ it contains only callback for check signature for payload. In callback method we use as example
+Usage php-sdk example/ it contains callback for check signature for payload. In callback method we use as example
 this:
 
      <?php
