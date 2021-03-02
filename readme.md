@@ -1,32 +1,19 @@
-# Setup rocketfel merchant account
+# Rocketfuel merchant account setup
 
-1. при регистрации выбрать Merchant
-2. регистрация и подтверждение почты
-3. connect your store - copy your merchantID set shop url set callback, for
-   example *https://yourshop.example/callback-rocketfuel*
+1. Go to https://stage1.rocketdemo.net/ and register as a Merchant 
+2. Confirm your email
+3. Connect your e-shop = click Edit in the lower left corner, fill in all the fields, copy your merchantID
+4. Type in your shop callback URL (for example, *https://yourshop.com/rocketfuel-callback*)
 
-# Send payment to extension or iframe
+# Payments (via Rocketfuel extension or popup window/iframe)
 
-After you store new order in your shop database, 
-for processing payment you should send payload to rocketfuel,
+After a user creates a new order in your shop and clicks Rocketfuel payment method button on a checkout page, order information should be sent to Rocketfuel
 
-## make payload(cart) in needed format
+## Payload (cart) proper format
 
 Use [rocketfuel-php-sdk](https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk/)
 
-## install php sdk via composer
-
-    composer require rocketfuel/rocketfuel-php-sdk @dev
-
-## or git
-
-    git clone https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk.git
-
-    cd rocketfuel-php-sdk
-
-    composer install
-
-make controller method looks like
+Create a controller method, for example
 
     <?php
     require_once(dirname(__FILE__) . '/rocketfuel-php-sdk/RocketFuel.php');
@@ -38,9 +25,9 @@ make controller method looks like
 
 where
 
-- ORDER_ID - order->id in your shop(need for statistics)
-- AMMOUNT - total ammount
-- CART - array of cart items(products), format for example
+- ORDER_ID - order identifier in your shop (is needed for statistics)
+- AMMOUNT - total ammount of money (purchase amount)
+- CART - array of cart items (products), for example
 
     [
         [
@@ -55,11 +42,11 @@ where
         ]
     ]
 
-for example possible get order payload(card) via ajax from shop backend, 
-next need use [rocketfuel-js-helper](https://bitbucket.org/rocketfuelblockchain/rocketfuel-js-helper/src/master/) 
-on frontend and send payload(cart) to iframe or extension
+for example it's possible to get order payload (cart) from shop backend via ajax or something similar, 
+next it's needed to use [rocketfuel-js-helper](https://bitbucket.org/rocketfuelblockchain/rocketfuel-js-helper/src/master/) 
+on frontend and send cart info to the Rocketfuel popup/iframe or extension
 
-# Using js helper
+# JS Helper manual
 
 ## Install
 
@@ -82,10 +69,11 @@ on frontend and send payload(cart) to iframe or extension
 3. { type: 'iframe', message: 'iframe closed' }
 
 
-Rocketfuel, after processing payment send data to your callback-url Need validate it by it
+After a payment is processed Rocketfuel sends data (payload) to a shop callback URL. It's needed to validate the data by
 using [rocketfuel-php-sdk](https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk/)
 
-# Using php sdk
+# Using PHP SDK for callbacks
+
 
 Usage php-sdk example/ it contains callback for check signature for payload. In callback method we use as example
 this:
