@@ -62,6 +62,7 @@ on frontend and send cart info to the Rocketfuel popup/iframe or extension
     const { sendCart } = rocketfuelJsHelper;
     const result = sendCart(cart, iFrameUrl); // if you do not send the cart and url, it will return an error
 
+For stage1 enironment iFrameUrl is https://iframe-stage1.rocketdemo.net/
 
 ## possible result values:
 1. { type: 'extension', message: 'cart sent to extension' }
