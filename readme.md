@@ -1,4 +1,4 @@
-#Setup rocketfel merchant account
+# Setup rocketfel merchant account
 
 1. при регистрации выбрать Merchant
 2. регистрация и подтверждение почты
@@ -10,21 +10,21 @@
 
 After you create new order in your shop, you should send it to rocketfuel, need use [rocketfuel-js-helper](https://bitbucket.org/rocketfuelblockchain/rocketfuel-js-helper/src/master/)
 
-#Using js helper
+# Using js helper
 
 
 Rocketfuel, after making payment send data to your callback-url
 Need validate it by it using [rocketfuel-php-sdk](https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk/)
 
-#Using php sdk
+# Using php sdk
 
 install php sdk 
 
-##via composer 
+## via composer 
 
     composer require rocketfuel/rocketfuel-php-sdk @dev
 
-##or git 
+## or git 
 
     git clone https://bitbucket.org/rocketfuelblockchain/rocketfuel-php-sdk.git
 
