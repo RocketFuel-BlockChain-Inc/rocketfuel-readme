@@ -4,7 +4,7 @@ Order callbacks originating from RocketFuel will be signed using our callback si
 
 If you would like to verify callbacks manually in the language of your choice, the message digest used is SHA256, the message that is signed is the POST body, the padding scheme is PKCS1_v1_5, and the signature to be verified is present in the ‘signature’ HTTP data encoded as base64.
 
-## Node.js
+## PHP
 ```php
 public function verifyCallback($body, $signature)
 {
@@ -12,8 +12,7 @@ public function verifyCallback($body, $signature)
     return (1 == openssl_verify($body, $signature_buffer, self::getCallbackPublicKey(), OPENSSL_ALGO_SHA256));
 }
 ```
-
-## PHP
+## Node.js
 ```js
 function verifySignature(body, public_key_rsa, signature) {
   const verifier = crypto.createVerify('RSA-SHA256');
