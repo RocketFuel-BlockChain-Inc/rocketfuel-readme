@@ -18,27 +18,32 @@ Create a controller method, for example
     <?php
     require_once(dirname(__FILE__) . '/rocketfuel-php-sdk/RocketFuel.php');
 
-    $rocketfuel = new RocketFuel(YOUR_MERCHANT_ID);
+    $rocketfuel = new RocketFuel(YOUR_MERCHANT_ID, YOUR_PUBLIC_KEY);
 
-    $result = $rocketfuel->getOrderPayload(ORDER_ID, CART, AMMOUNT);
+    $result = $rocketfuel->getOrderPayload(ORDER_ID, YOUR_CART, ORDER_TOTAL_PRICE);
     echo $result;
 
 where
 
-- ORDER_ID - order identifier in your shop (is needed for statistics)
-- AMMOUNT - total ammount of money (purchase amount)
-- CART - array of cart items (products), for example
+- ORDER_ID - order ID should be unique for your shop
+- ORDER_TOTAL_PRICE - total price of whole order for payment, in USD only
+- YOUR_CART - array looks like
+- YOUR_PUBLIC_KEY key should be in PEM format, copy it from your RocketFuel merchant account
+
 
     [
         [
             'product_id' => 1,
             'total_price' => 1,22,
             'product_name' => 'NAME OF THE PRODUCT'
+            'quantity' => 5
         ],
+        ...
         [
             'product_id' => 2,
             'total_price' => 1,32,
             'product_name' => 'NAME OF THE PRODUCT 2'
+            'quantity' => 1
         ]
     ]
 
@@ -82,7 +87,7 @@ this:
      <?php
     require_once(dirname(__FILE__) . '/rocketfuel-php-sdk/RocketFuel.php');
 
-    $rocketfuel = new RocketFuel(YOUR_MERCHANT_ID);
+    $rocketfuel = new RocketFuel(YOUR_MERCHANT_ID, YOUR_PUBLIC_KEY);
 
     $result = $rocketfuel->callback(JSON_PAYLOAD_FROMROCKETFUEL, 'SIGNATURE');
     echo $result;
