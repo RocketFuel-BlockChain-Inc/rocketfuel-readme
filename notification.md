@@ -26,7 +26,7 @@ To assist you in testing, the following is an example POST body with associated 
 
 ### Payload:
 ```json
-{"amount":"0.31","currency":"USD","offerId":"1135","referenceId":"5f29fc82-8f8c-4a07-8b87-4dec1ed3415f","status":true,"transactionId":"b4c47d98-dc45-463b-9790-4222ff38d3e6"}
+{"amount":"0.31","currency":"USD","offerId":"1135","referenceId":"5f29fc82-8f8c-4a07-8b87-4dec1ed3415f","status":true,"transactionId":"b4c47d98-dc45-463b-9790-4222ff38d3e6", "paymentStatus":0,"cryptoAmount":0.2214221,"cryptoCurrency":"BTC","receivedAmount":0.0021342}
 ```
 
 ### Signature:
