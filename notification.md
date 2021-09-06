@@ -3,6 +3,7 @@
 RocketFuel webhook call are triggered to update the merchant on the nupdated status of the transaction. 
 
 Rocketfuel webhooks support following events:-
+
 * Transaction is marked as pending / initiated
 * Transaction is marked as partial paid
 * Transaction is marked as successful
