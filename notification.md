@@ -1,3 +1,14 @@
+# Rocketfuel Webhook and Events
+
+RocketFuel webhook call are triggered to update the merchant on the nupdated status of the transaction. 
+
+Rocketfuel webhooks support following events:-
+* Transaction is marked as pending / initiated
+* Transaction is marked as partial paid
+* Transaction is marked as successful
+* Transaction is marked as failed
+
+
 # Securing Callbacks
 
 Order callbacks originating from RocketFuel will be signed using our callback signing RSA private key.
