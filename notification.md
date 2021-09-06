@@ -29,21 +29,21 @@ To assist you in testing, the following is an example POST body with associated 
 {"amount":"0.31","currency":"USD","offerId":"1135","referenceId":"5f29fc82-8f8c-4a07-8b87-4dec1ed3415f","status":true,"transactionId":"b4c47d98-dc45-463b-9790-4222ff38d3e6", "paymentStatus":0,"cryptoAmount":0.2214221,"cryptoCurrency":"BTC","receivedAmount":0.0021342}
 ```
 #### Where
-* amount :-  Amount (Float)
-* currency :- Currency of transaction
-* offerId :- Merchant database Order/offer id
-* referenceId :- RKFL database reference transaction id
-* status:-
-  * true:- successful
-  * false:- pending/failed/partial
-* paymentStatus:-
-  * 0 - pending
-  * 1 - successful
-  * -1 - failed
-  * 101 - partial
-* cryptoAmount :- Crypto value of transaction
-* cryptoCurrency :- Crypto currency used
-* receivedAmount :- Received crypto amount
+1. amount :-  Amount (Float)
+1. currency :- Currency of transaction
+1. offerId :- Merchant database Order/offer id
+1. referenceId :- RKFL database reference transaction id
+1. status:- 
+    * true:- successful
+    * false:- pending/failed/partial
+1. paymentStatus
+    * 0 - pending
+    * 1 - successful
+    * -1 - failed
+    * 101 - partial
+1. cryptoAmount :- Crypto value of transaction
+1. cryptoCurrency :- Crypto currency used
+1. receivedAmount :- Received crypto amount
 
 ### Signature:
 ```
