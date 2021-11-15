@@ -38,28 +38,31 @@ To assist you in testing, the following is an example POST body with associated 
 
 ### Payload:
 ```json
-{"amount":"0.31","currency":"USD","offerId":"1135","referenceId":"5f29fc82-8f8c-4a07-8b87-4dec1ed3415f","status":true,"transactionId":"b4c47d98-dc45-463b-9790-4222ff38d3e6", "paymentStatus":0,"cryptoAmount":0.2214221,"cryptoCurrency":"BTC","receivedAmount":0.0021342}
+{"amount":"24","conversionRate":{"fiatCurrency":"USD","rate":1},"cryptoAmount":"24","cryptoCurrency":"USD","currency":"USD","offerId":"1636959488047","paymentStatus":"1","receivedAmount":"0","referenceId":"346d797e-aa26-4907-b75a-04539ff0a0a8","status":true,"transactionId":"3c56d8fa-32d3-41e6-8563-d5990ffaf7dd"}
 ```
 #### Where
 1. amount :-  Amount (Float)
 1. currency :- Currency of transaction
-1. offerId :- Merchant database Order/offer id
-1. referenceId :- RKFL database reference transaction id
-1. status:- 
+2. offerId :- Merchant database Order/offer id
+3. referenceId :- RKFL database reference transaction id
+4. status:- 
     * true:- successful
     * false:- pending/failed/partial
-1. paymentStatus
+5. paymentStatus
     * 0 - pending
     * 1 - successful
     * -1 - failed
     * 101 - partial
-1. cryptoAmount :- Crypto value of transaction
-1. cryptoCurrency :- Crypto currency used
-1. receivedAmount :- Received crypto amount
+6. cryptoAmount :- Crypto value of transaction
+7. cryptoCurrency :- Crypto currency used
+8. receivedAmount :- Received crypto amount
+9. conversionRate :- Rate of conversion from fiat to crypto during transaction
+    * fiatCurrency - Base currency for conversion
+    * rate - conversion rate (multiplier)
 
 ### Signature:
 ```
-dY5argYpL8mFeAp/AjZ3zOfkl46KnR1O+97LcQVloZ9+ED34w+td9WZ7CS5OKC08wkXy4s/6q1tbjaXweXBru9J0ExkpFzyNkWgLYkKSHauRf0uLwV+FVGTZz+1CHa9sHvLrwRlcePw57kF4hl9zdY9AucKHPu5sE5607M1OoQ/PBkxT/mEbzhKgxxRV/GE0BeMol1Ql+94byj1A1wOJYBQkvGiGlxWn8bkHPebWYAmh08U89Oi5VnO1gAzHJ5N3M0bQs8xgWfEC1cRqVBD/sHJAk+rDvSgTXj/+3DEULnWbf7Dr5FpLMyKeLMrkk0Z/6dQ2qiJJ3BEeeR1+AcJ3Vg==
+f09HYBeZFqMkeo/ri5kZI0DGnCiSnYSl2KSZLaB3tIL722a1IsnCSsWsfdZRAiv/7e/MdqguXTBmEUdBzKnzR2ATBJF5VRtLeD7LhnNxpSs1+sAAgIwI2JS6nkRj8DTKZbZUzweGSdgARZfxxoVqQaaW4DPb8kXhGPVo/tOG8Rw62Vbyg279ysgWCtNuYltKg05DFxfWy287LtBnvs3kaw0xoTuR5rCnEncFFLRozSCPRSRU0Ebb3kfWNK6surso9OrqVkdbzXLCpLuLkkakxNvNpahzvB3DuT2zZn0NFxP8YGJquAVcWLh2aj0syRPDArHY5An5CtQ6nuiiJB6jTw==
 ```
 
 ### Public RSA key
