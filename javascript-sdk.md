@@ -215,17 +215,17 @@ Note - Token needs to send in the Header and details of the items purchased in t
 
 		
 
-		const  uuidInfo = JSON.parse(result);
-		if(uuidInfo.error !== undefined){
-		alert("Order placement failed");
-		return  false;
-		}
-		uuid = uuidInfo.uuid;
-		rkfl = new  RocketFuel({
-			uuid,
-			callback:  callBackFunc,
-			environment:  "<%= developmentEnv %>"  // prod, preprod
-		});
+			const  uuidInfo = JSON.parse(result);
+			if(uuidInfo.error !== undefined){
+				alert("Order placement failed");
+				return  false;
+			}
+			uuid = uuidInfo.uuid;
+			rkfl = new  RocketFuel({
+				uuid,
+				callback:  callBackFunc,
+				environment:  "<%= developmentEnv %>"  // prod, preprod
+			});
 	
 4.3. After initialising the object start the payment by calling the initPayment method of the above script.
 	
