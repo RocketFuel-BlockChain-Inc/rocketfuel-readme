@@ -282,7 +282,7 @@ Note - Token needs to send in the Header and details of the items purchased in t
             }
 2.  RKFL Token usage
     - Autosignup 
-
+```
             const payload = {
             	firstName: firstName,
             	lastName, lastName,
@@ -295,16 +295,16 @@ Note - Token needs to send in the Header and details of the items purchased in t
             	// It is unique to each customer
             	res.result.rkflToken;
             })})
-            
+```            
     - Existing RKFL Token
-    
+```    
             rkfl = new  RocketFuel({
                 token, // rkfltoken
     			uuid,
     			callback:  callBackFunc,
     			environment:  "<%= developmentEnv %>"  // prod, preprod
 		    })
-
+```
 ## You can refer to the [REFERENCE_LINK] for demonstration.
 
    [CDN]: <https://d3rpjm0wf8u2co.cloudfront.net/static/rkfl.js>
