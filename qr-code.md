@@ -44,25 +44,11 @@ Response:-
 
 ```
 curl '{{protocol}}://{{host_port}}/api/purchase/external-status-qr' \
-  -H 'Connection: keep-alive' \
-  -H 'Pragma: no-cache' \
-  -H 'Cache-Control: no-cache' \
-  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"' \
-  -H 'Accept: application/json, text/plain, */*' \
-  -H 'Content-Type: application/json' \
-  -H 'sec-ch-ua-mobile: ?0' \
-  -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36' \
-  -H 'sec-ch-ua-platform: "Linux"' \
-  -H 'Origin: http://localhost:3000' \
-  -H 'Sec-Fetch-Site: same-site' \
-  -H 'Sec-Fetch-Mode: cors' \
-  -H 'Sec-Fetch-Dest: empty' \
-  -H 'Referer: http://localhost:3000/' \
-  -H 'Accept-Language: en-US,en;q=0.9' \
-  --data-raw '{"offerId":"TR09","merchantId":"22227220-3153-4094-bdca-6007afb361ba"}' \
-  --compressed
-  ```
-  ```
+--header 'authorization: Bearer {{auth_header}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"offerId":"TR09","merchantId":"22227220-3153-4094-bdca-6007afb361ba"}' \
+```
+```
   Response:
   {"ok":true,"result":{"responseObj":{"txStatus":"pending","recievedAmount":null,"currency":"LTC"}}}
-  ```
+```
