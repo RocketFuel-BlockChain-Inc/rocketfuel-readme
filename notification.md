@@ -53,6 +53,11 @@ To assist you in testing, the following is an example POST body with associated 
     * 1 - successful
     * -1 - failed
     * 101 - partial
+    * 21 - Txn can be refunded
+    * 22 - Txn refuned
+    * 20 - Txn cannot be refunded
+    * 23 - Txn refund declined
+
 6. cryptoAmount :- Crypto value of transaction
 7. cryptoCurrency :- Crypto currency used
 8. receivedAmount :- Received crypto amount
