@@ -270,40 +270,6 @@ Note - Token needs to send in the Header and details of the items purchased in t
 			   currency:"ETH"
 		   }
 
-# SSO Login
-
-## Create merchant Auth using the [PUBLIC_KEY]
-        ### JS Code snippet
-
-            var merchantAuth = function(merchantId) {
-                var buffer = Buffer.from(merchantId);
-                var encrypted = crypto.publicEncrypt(process.env.PUBLIC_KEY, buffer);
-                return encrypted.toString("base64");
-            }
-## RKFL Token usage
-   - Autosignup
-
-            const payload = {
-            	firstName: firstName,
-            	lastName, lastName,
-            	email: email,
-            	merchantAuth: "<%= merchantAuth %>",
-            }
-            rkfl = new RocketFuel({ environment: "<%= developmentEnv %>", });
-            rkfl.rkflAutoSignUp(payload, environment = "<%= developmentEnv %>").then((res) => {
-            	// save this rkflToken for reference in the DB 
-            	// It is unique to each customer
-            	res.result.rkflToken;
-            })})
-   
-   - Existing RKFL Token
-   
-            rkfl = new  RocketFuel({
-                token, // rkfltoken
-    			uuid,
-    			callback:  callBackFunc,
-    			environment:  "<%= developmentEnv %>"  // prod, preprod
-		    })
 ## You can refer to the [REFERENCE_LINK] for demonstration.
 
    [CDN]: <https://d3rpjm0wf8u2co.cloudfront.net/static/rkfl.js>
