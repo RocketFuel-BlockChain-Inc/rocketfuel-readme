@@ -6,7 +6,7 @@
 
 Follow the guide to embed RocketFuel Hosted Page on the Merchant's website.
 
-# Prerequistes:-
+# Prerequisites:-
 
 Merchant should send below JSON input details to display the same on RocketFuel hosted page
 
